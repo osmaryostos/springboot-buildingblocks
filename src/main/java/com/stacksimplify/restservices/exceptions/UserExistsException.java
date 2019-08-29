@@ -1,5 +1,6 @@
 package com.stacksimplify.restservices.exceptions;
 
+
 public class UserExistsException extends Exception {
 
 	/**
