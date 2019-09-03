@@ -13,6 +13,8 @@ import javax.validation.constraints.Size;
 
 import org.springframework.hateoas.ResourceSupport;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import io.swagger.annotations.ApiModel;
@@ -23,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "This model is to create a user")
 @Entity
 @Table(name = "user")
-//@JsonIgnoreProperties({"firstname", "lastname"})  -- Static Filtering @JsonIgnore
+//@JsonIgnoreProperties({"firstname", "lastname"})  // Static Filtering @JsonIgnore
 //@JsonFilter(value = "userFilter")  -- Used for MappingJacksonValue filtering section
 public class User extends ResourceSupport {
 
@@ -57,9 +59,9 @@ public class User extends ResourceSupport {
 	@JsonView(Views.Internal.class)
 	private String role;
 
-	@Column(name = "SSN", length = 50, nullable = false, unique = true)
-	//@JsonIgnore -- Static Filtering @JsonIgnore
-	@JsonView(Views.Internal.class)
+	@Column(name = "SSN", length = 50, nullable = true, unique = true)
+	@JsonIgnore // Static Filtering @JsonIgnore
+	//@JsonView(Views.Internal.class)
 	private String ssn;
 
 	@OneToMany(mappedBy = "user")
