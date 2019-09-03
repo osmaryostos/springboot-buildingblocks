@@ -32,7 +32,9 @@ public class HelloWorldController {
 	
 	@GetMapping("/hello-int")
 	public String getMessagesInI18NFormat(@RequestHeader(name = "Accept-Language", required=false) 
-	String locale) {
+	String locale) 
+	{
+	
 		return messageSource.getMessage("label.hello", null, new Locale(locale));
 		
 	}
