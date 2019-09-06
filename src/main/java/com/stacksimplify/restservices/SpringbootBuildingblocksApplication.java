@@ -30,23 +30,4 @@ public class SpringbootBuildingblocksApplication {
 		return messageSource;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
